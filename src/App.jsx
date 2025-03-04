@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <div className="flex flex-col items-center bg-gray-100 ">
-        <header className="sticky top-0 z-50 text-black p-4 w-full shadow-md bg-white">
+        <header className="fixed top-0 z-50 text-black p-4 w-full shadow-md bg-white">
           <div className="container mx-auto flex items-center justify-between">
             <div className="text-xl font-bold">
               <a href="#">Portfolio</a>
@@ -22,7 +22,7 @@ function App() {
               <li>
                 <a
                   href="#home"
-                  className="hover:text-red-400 hover:border-b-3 transition-all cursor-pointer"
+                  className="hover:text-red-400 scroll-mt-20 hover:border-b-3 transition-all cursor-pointer"
                 >
                   Home
                 </a>
@@ -30,7 +30,7 @@ function App() {
               <li>
                 <a
                   href="#about"
-                  className="hover:text-red-400 hover:border-b-3 transition-all cursor-pointer"
+                  className="hover:text-red-400 scroll-mt-20 hover:border-b-3 transition-all cursor-pointer"
                 >
                   About
                 </a>
@@ -38,7 +38,7 @@ function App() {
               <li>
                 <a
                   href="#skills"
-                  className="hover:text-red-400 hover:border-b-3 transition-all cursor-pointer"
+                  className="hover:text-red-400  scroll-mt-20 hover:border-b-3 transition-all cursor-pointer"
                 >
                   Skills
                 </a>
@@ -46,7 +46,7 @@ function App() {
               <li>
                 <a
                   href="#contact"
-                  className="hover:text-red-400 hover:border-b-3 transition-all cursor-pointer"
+                  className="hover:text-red-400 scroll-mt-20 hover:border-b-3 transition-all cursor-pointer"
                 >
                   Contact
                 </a>

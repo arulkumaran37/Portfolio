@@ -2,7 +2,7 @@ import './Home.css'
 function Home(){
     return(
         <>
-        <div className='flex flex-col-reverse md:flex-row items-center justify-between justify-center md:space-x-30 space-y-0 pt-20 md:gap-10 md:pt-20' >
+        <div className='flex flex-col-reverse md:flex-row items-center justify-center  md:space-x-30 space-y-0 pt-20 md:gap-10 md:pt-20' >
 
         <h1 className="text-4xl leading-normal md:text-5xl font-bold text-center mt-10 md:text-left ">
             Hi, <br />I'am <a href="#" className='text-red-400'>UserName</a> <br />Web developer
