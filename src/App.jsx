@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import Home from "./components/Home/home";
+import Projects from "./components/Projects/projects";
 import About from "./components/About/about";
 import Skills from "./components/Skills/skills";
-import Footer from "./components/Footer/footer";
 import { IoReorderThreeSharp } from "react-icons/io5";
 
 function App() {
@@ -19,38 +19,16 @@ function App() {
             </div>
 
             <ul className="hidden md:flex gap-12 font-semibold text-base">
-              <li>
-                <a
-                  href="#home"
-                  className="hover:text-red-400 scroll-mt-20 hover:border-b-3 transition-all cursor-pointer"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  className="hover:text-red-400 scroll-mt-20 hover:border-b-3 transition-all cursor-pointer"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#skills"
-                  className="hover:text-red-400  scroll-mt-20 hover:border-b-3 transition-all cursor-pointer"
-                >
-                  Skills
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="hover:text-red-400 scroll-mt-20 hover:border-b-3 transition-all cursor-pointer"
-                >
-                  Contact
-                </a>
-              </li>
+              {["Home", "About", "Skills","Projects", "Contact"].map((item) => (
+                <li key={item}>
+                  <a
+                    href={`#${item.toLowerCase()}`}
+                    className="hover:text-red-400 scroll-mt-20 hover:border-b-3 transition-all cursor-pointer"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
 
             <IoReorderThreeSharp
@@ -60,25 +38,21 @@ function App() {
           </div>
 
           {/* Mobile Menu */}
-          <div
-            className={`absolute md:hidden top-16 right-0 w-40 bg-white flex flex-col items-center gap-6 border-1 rounded-md font-semibold text-lg transition-transform ${
-              isMenuOpen ? "opacity-100" : "opacity-0"
-            }`}
-            style={{ transition: "transform 0.3 ease, opacity 0.3 ease" }}
-          >
-            <li className="list-none w-full text-center p-4 hover:bg-red-400 hover:text-white transition-all cursor-pointer">
-              <a href="#home">Home</a>
-            </li>
-            <li className="list-none w-full text-center p-4 hover:bg-red-400 hover:text-white transition-all cursor-pointer">
-              <a href="#about">About</a>
-            </li>
-            <li className="list-none w-full text-center p-4 hover:bg-red-400 hover:text-white transition-all cursor-pointer">
-              <a href="#skills">Skills</a>
-            </li>
-            <li className="list-none w-full text-center p-4 hover:bg-red-400 hover:text-white transition-all cursor-pointer">
-              <a href="#contact">Contact</a>
-            </li>
-          </div>
+          {isMenuOpen && (
+            <div className="absolute top-16 right-0 w-48 bg-white flex flex-col items-center gap-4 border shadow-md rounded-md p-4 md:hidden">
+              {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="text-lg font-semibold text-gray-700 hover:text-red-500 transition-all"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
+          )}
+
         </header>
 
         <div id="home">
@@ -93,10 +67,18 @@ function App() {
           <Skills />
         </div>
 
-        <div id="contact">
-          <Footer />
+        <div id="projects">
+          <Projects />
         </div>
       </div>
+
+          {/* <Footer /> */}
+      <footer id="contact" className="w-full bg-red-600 py-6">
+          <h1 className="text-2xl font-bold text-center">UserName</h1>
+          <p className="text-m text-center">
+            <span>github </span>|| instagram || gamil
+            </p>
+        </footer>
 
       <style jsx>{`
         html {
