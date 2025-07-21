@@ -14,7 +14,7 @@ function App() {
       <div className="flex flex-col items-center bg-gray-100 ">
         <header className="fixed top-0 z-50 text-black p-4 w-full shadow-md bg-white">
           <div className="container mx-auto flex items-center justify-between">
-            <div className="text-xl font-bold">
+            <div className="text-xl pl-20 font-bold">
               <a href="#">Portfolio</a>
             </div>
 
@@ -23,7 +23,7 @@ function App() {
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase()}`}
-                    className="hover:text-red-400 scroll-mt-20 hover:border-b-3 transition-all cursor-pointer"
+                    className="hover:text-red-400 scroll-mt-20 hover:border-b-4 hover:border-b-red-400 border-b-4 border-transparent transition-all cursor-pointer"
                   >
                     {item}
                   </a>
@@ -32,14 +32,14 @@ function App() {
             </ul>
 
             <IoReorderThreeSharp
-              className="size-8 md:hidden"
+              className="size-10 pr-2 md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             />
           </div>
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="absolute top-16 right-0 w-48 bg-white flex flex-col items-center gap-4 border shadow-md rounded-md p-4 md:hidden">
+            <div className="absolute top-16 right-0 w-48 bg-white flex flex-col items-center gap-4 border shadow-md rounded-md p-4 md:hidden z-50">
               {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
                 <a
                   key={item}
@@ -76,11 +76,11 @@ function App() {
       <footer id="contact" className="w-full bg-red-600 py-6">
           <h1 className="text-2xl font-bold text-center">UserName</h1>
           <p className="text-m text-center">
-            <span>github </span>|| instagram || gamil
-            </p>
+            <span>github</span> || instagram || gmail
+          </p>
         </footer>
 
-      <style jsx>{`
+      <style>{`
         html {
           scroll-behavior: smooth;
         }

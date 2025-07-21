@@ -16,7 +16,7 @@ function About() {
           five centuries, but also the leap into electronic typesetting,
           remaining essentially unchanged.
         </p>
-        <img className="mt-10 rounded-2xl ml-30 w-100 md:w-90 md:h-100" src="https://placehold.co/500x500/png" alt="img" />
+        <img className="mt-10 rounded-2xl ml-10 w-80 md:w-90 md:h-100" src="https://placehold.co/500x500/png" alt="img" />
         </div>
       </section>
     </>
